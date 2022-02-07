@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="uz.gita.onlinecontacts.ui.screen.MainScreen"
+        android:label="MainFragment"
+        tools:layout="@layout/main_screen">
+        <action
+            android:id="@+id/action_mainFragment_to_loginScreen"
+            app:destination="@id/loginScreen" />
+        <action
+            android:id="@+id/action_mainFragment_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_mainFragment_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.onlinecontacts.ui.screen.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/login_screen">
+        <action
+            android:id="@+id/action_loginScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginScreen_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="uz.gita.onlinecontacts.ui.screen.RegisterScreen"
+        android:label="RegisterScreen"
+        tools:layout="@layout/register_screen">
+        <action
+            android:id="@+id/action_registerScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerScreen_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_registerScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.onlinecontacts.ui.screen.HomeScreen"
+        android:label="HomeScreen"
+        tools:layout="@layout/home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
